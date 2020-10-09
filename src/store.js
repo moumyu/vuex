@@ -27,19 +27,23 @@ export class Store {
 
     // store internal state
     this._committing = false
-    this._actions = Object.create(null)
-    this._actionSubscribers = []
-    this._mutations = Object.create(null)
-    this._wrappedGetters = Object.create(null)
+    this._actions = Object.create(null) // 保存所有actions的对象
+    this._actionSubscribers = [] // 保存所有action提交监听的subscribe
+    this._mutations = Object.create(null) // 保存所有mutations的对象
+    this._wrappedGetters = Object.create(null) // 保存所有getters的对选哪个
     this._modules = new ModuleCollection(options)
-    this._modulesNamespaceMap = Object.create(null)
-    this._subscribers = []
+    this._modulesNamespaceMap = Object.create(null) // 命名空间对应module的map
+    this._subscribers = [] // mutation完成后的订阅函数
     this._watcherVM = new Vue()
     this._makeLocalGettersCache = Object.create(null)
 
     // bind commit and dispatch to self
     const store = this
     const { dispatch, commit } = this
+    // boundDispatch的options去哪里了？
+    // dispatch和commit是如何通过第三个参数options: { root: true }提交到根级别的
+    // 对于store来说，dispatch和commit都是针对于根级别的，所以不需要options选项
+    // 对于子模块来说，后面有local级别的dispatch和commit
     this.dispatch = function boundDispatch (type, payload) {
       return dispatch.call(store, type, payload)
     }
@@ -96,6 +100,8 @@ export class Store {
       }
       return
     }
+    // 异步action怎么处理？
+    // => 对于commit的mutation都是同步的
     this._withCommit(() => {
       entry.forEach(function commitIterator (handler) {
         handler(payload)
@@ -252,6 +258,7 @@ export class Store {
   }
 }
 
+// 生成subscribe或subscribeAction，返回取消订阅函数
 function genericSubscribe (fn, subs, options) {
   if (subs.indexOf(fn) < 0) {
     options && options.prepend
@@ -291,6 +298,9 @@ function resetStoreVM (store, state, hot) {
     // use computed to leverage its lazy-caching mechanism
     // direct inline function use will lead to closure preserving oldVm.
     // using partial to return function with only arguments preserved in closure environment.
+    // 使用Vue的计算属性来达到缓存
+    // 直接使用内敛函数会导致oldVm上的闭包
+    // 使用partial返回只保留闭包环境中参数的函数
     computed[key] = partial(fn, store)
     Object.defineProperty(store.getters, key, {
       get: () => store._vm[key],
@@ -386,6 +396,9 @@ function installModule (store, rootState, path, module, hot) {
 function makeLocalContext (store, namespace, path) {
   const noNamespace = namespace === ''
 
+  // TODO: 这里为什么要声明一个本地的dispatch和commit
+  // 是因为Store.dispatch无法处理命名空间module的情况吗
+  // => 并不是，因为根dispatch和commit没有options选项，这里是扩展根方法
   const local = {
     dispatch: noNamespace ? store.dispatch : (_type, _payload, _options) => {
       const args = unifyObjectStyle(_type, _payload, _options)
@@ -420,6 +433,7 @@ function makeLocalContext (store, namespace, path) {
     }
   }
 
+  // TODO: 这里为什么要这样定义getters和state
   // getters and state object must be gotten lazily
   // because they will be changed by vm update
   Object.defineProperties(local, {

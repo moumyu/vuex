@@ -14,26 +14,32 @@ export default class Module {
     this.state = (typeof rawState === 'function' ? rawState() : rawState) || {}
   }
 
+  // 返回namespaced
   get namespaced () {
     return !!this._rawModule.namespaced
   }
 
+  // 添加children
   addChild (key, module) {
     this._children[key] = module
   }
 
+  // 删除children
   removeChild (key) {
     delete this._children[key]
   }
 
+  // 获取children
   getChild (key) {
     return this._children[key]
   }
 
+  // 判断是否有children
   hasChild (key) {
     return key in this._children
   }
 
+  // 更新module，只更新namespaced、actions、mutations、getters
   update (rawModule) {
     this._rawModule.namespaced = rawModule.namespaced
     if (rawModule.actions) {

@@ -13,6 +13,7 @@ export default class ModuleCollection {
     }, this.root)
   }
 
+  // 根据path获取命名空间，如/path, /path/foo/
   getNamespace (path) {
     let module = this.root
     return path.reduce((namespace, key) => {
@@ -31,10 +32,12 @@ export default class ModuleCollection {
     }
 
     const newModule = new Module(rawModule, runtime)
+    // 什么时候这个path会不为空数组
+    // => 当嵌套的modules执行register时path不为空数组
     if (path.length === 0) {
       this.root = newModule
     } else {
-      const parent = this.get(path.slice(0, -1))
+      const parent = this.get(path.slice(0, -1)) // 取path中除去最后一个
       parent.addChild(path[path.length - 1], newModule)
     }
 
@@ -61,6 +64,7 @@ export default class ModuleCollection {
       return
     }
 
+    // TODO: 这个runtime到底有什么用
     if (!child.runtime) {
       return
     }
@@ -76,6 +80,8 @@ export default class ModuleCollection {
   }
 }
 
+// 更新module，这个更新除了更新目标module的namespaced、actions、mutations、getters
+// 还会根据newModule是否有嵌套的modules来进行更新
 function update (path, targetModule, newModule) {
   if (__DEV__) {
     assertRawModule(path, newModule)

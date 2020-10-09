@@ -23,6 +23,8 @@ module.exports = {
     publicPath: '/__build__/'
   },
 
+  devtool: 'source-map',
+
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },

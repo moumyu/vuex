@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bdd06aa-0558-4cd4-b201-cc51e95c15cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vuex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/components/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/store/moudles/bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test/store/moudles/foo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/module-collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/module-collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iBARDYfkBHWx4BvwaFLWrBKSTY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue-study" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bdd06aa-0558-4cd4-b201-cc51e95c15cb" name="Default Changelist" comment="" />
+      <created>1601370601223</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601370601223</updated>
+      <workItem from="1601370602554" duration="20158000" />
+      <workItem from="1601457894493" duration="2223000" />
+      <workItem from="1602206163476" duration="24181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="431" y="169" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601436135073">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="431" y="169" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1601436135073" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1602231738895">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602231738895" />
+    <state width="1345" height="161" key="GridCell.Tab.0.bottom" timestamp="1602226343045">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602226343045" />
+    <state width="1345" height="161" key="GridCell.Tab.0.center" timestamp="1602226343044">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1602226343044" />
+    <state width="1345" height="161" key="GridCell.Tab.0.left" timestamp="1602226343044">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1602226343044" />
+    <state width="1345" height="161" key="GridCell.Tab.0.right" timestamp="1602226343045">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1602226343045" />
+    <state x="385" y="101" width="596" height="536" key="find.popup" timestamp="1601432706448">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="385" y="101" width="596" height="536" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1601432706448" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/examples/test/app.js</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
