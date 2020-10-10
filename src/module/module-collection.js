@@ -64,7 +64,11 @@ export default class ModuleCollection {
       return
     }
 
-    // TODO: 这个runtime到底有什么用
+    // 这个runtime到底有什么用
+    // => runtime为是否是运行时的模块
+    // 在初始化时通过new ModuleCollection里register里创建的Module runtime为false
+    // 后续通过registerModule动态添加的Module runtime为true
+    // 所以这里如果是动态模块可以卸载掉，而静态模块是不能够卸载的
     if (!child.runtime) {
       return
     }

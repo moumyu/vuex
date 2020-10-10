@@ -351,6 +351,7 @@ function installModule (store, rootState, path, module, hot) {
   }
 
   // set state
+  // TODO: 为什么要进行这一步？
   if (!isRoot && !hot) {
     const parentState = getNestedState(rootState, path.slice(0, -1))
     const moduleName = path[path.length - 1]
@@ -396,9 +397,12 @@ function installModule (store, rootState, path, module, hot) {
 function makeLocalContext (store, namespace, path) {
   const noNamespace = namespace === ''
 
-  // TODO: 这里为什么要声明一个本地的dispatch和commit
+  // 这里为什么要声明一个本地的dispatch和commit
   // 是因为Store.dispatch无法处理命名空间module的情况吗
   // => 并不是，因为根dispatch和commit没有options选项，这里是扩展根方法
+  // 而声明local的原因一个是对于有命名空间的commit和dispatch来说，如果其带有options: { root: true }
+  // 则会有对命名空间的的处理（与根commit和dispatch不同）
+  // 第二个是声明其state和getters，防止被vm.update修改？
   const local = {
     dispatch: noNamespace ? store.dispatch : (_type, _payload, _options) => {
       const args = unifyObjectStyle(_type, _payload, _options)
